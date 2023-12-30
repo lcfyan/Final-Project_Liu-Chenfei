@@ -1,31 +1,36 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Animator animator;
-    private bool isWalking;
+    Animator m_Animator;
+
+    private CharacterController cc;
+    [Header("移动参数")]
+    public float moveSpeed;
+
+    private float horizontalMove, verticalMove;
+
+    private Vector3 dir;
 
     void Start()
     {
-        // 获取Animator组件
-        animator = GetComponent<Animator>();
+        cc = GetComponent<CharacterController>();
+        m_Animator = GetComponent<Animator>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        // 检测WASD键
+        horizontalMove = Input.GetAxis("Horizontal") * moveSpeed;
+        verticalMove = Input.GetAxis("Vertical") * moveSpeed;
 
-        float verticalInput = Input.GetAxis("Vertical");
+        dir = transform.forward * verticalMove + transform.right * horizontalMove;
+        cc.Move(dir * Time.deltaTime);
 
-        // 更新布尔参数
-        isWalking = (verticalInput != 0f);
-
-        // 设置Animator中的布尔参数
-        animator.SetBool("IsWalking", isWalking);
-
-        // 处理角色移动逻辑，你可以根据具体需求实现移动逻辑
-        // 这里只是一个简单的示例
-        Vector3 movement = new Vector3(0f, 0f, verticalInput);
-        transform.Translate(movement * Time.deltaTime);
+        bool hasHorizontalInput = !Mathf.Approximately(horizontalMove, 0f);
+        bool hasVerticalInput = !Mathf.Approximately(verticalMove, 0f);
+        bool isWalking = hasHorizontalInput || hasVerticalInput;
+        m_Animator.SetBool("IsWalking", isWalking);
     }
 }

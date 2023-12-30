@@ -6,6 +6,14 @@ TagManager:
   tags:
   - Shootable
   - Cube1
+  - Cube2
+  - Icon1
+  - Icon2
+  - Cube3
+  - Cube4
+  - Cube5
+  - Cube6
+  - Cube7
   layers:
   - Default
   - TransparentFX
