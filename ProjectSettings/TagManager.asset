@@ -4,44 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Shootable
-  - Cube1
-  - Cube2
-  - Icon1
-  - Icon2
-  - Cube3
-  - Cube4
-  - Cube5
-  - Cube6
-  - Cube7
-  - Icon3
-  - Icon4
-  - Icon5
-  - Icon6
-  - Icon7
-  - Icon8
-  - Icon9
-  - Icon10
-  - Icon11
-  - Icon12
-  - Icon13
-  - Icon14
-  - Icon15
-  - Icon16
-  - Icon17
-  - Icon18
-  - Icon19
-  - Icon20
-  - Icon21
-  - Icon22
-  - Icon23
-  - Icon24
-  - Icon25
-  - Icon26
-  - Icon27
-  - Icon28
-  - Icon29
-  - Icon30
+  - Ball1
+  - Ball2
+  - Ball3
+  - Ball
+  - Ball5
+  - auto
+  - Ball4
+  - Final
   layers:
   - Default
   - TransparentFX
@@ -51,9 +21,9 @@ TagManager:
   - UI
   - 
   - 
-  - Lighting
-  - Ground
-  - Postprocessing
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -76,9 +46,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Fire
-    uniqueID: 3804908061
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
