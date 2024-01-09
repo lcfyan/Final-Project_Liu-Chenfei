@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoxController : MonoBehaviour
+public class MoneyControllerC : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -12,15 +12,18 @@ public class BoxController : MonoBehaviour
             // 如果是"Ball2"，销毁当前的 Box 对象
             Destroy(gameObject);
         }
-        else if (other.CompareTag("Ball4"))
+        else if (other.CompareTag("Ball2"))
         {
-            // 如果是"Ball4"，销毁当前的 Box 对象
+            // 如果是"Ball2"，销毁当前的 Box 对象
             Destroy(gameObject);
         }
         else if (other.CompareTag("Ball3"))
         {
-            // 如果是"Ball4"，销毁当前的 Box 对象
+            // 如果是"Ball2"，销毁当前的 Box 对象
             Destroy(gameObject);
         }
+
+
+
     }
 }

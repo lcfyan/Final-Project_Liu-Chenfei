@@ -1,14 +1,11 @@
-// Move2 脚本
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class Move2 : MonoBehaviour
+public class MoveC : MonoBehaviour
 {
-    private float moveSpeed; // 移动速度
-    private bool canMove = true;
-
+    public float moveSpeed = 5f;
     private Rigidbody2D rb;
-    public PlayerController playerController;  // 引用PlayerController脚本
+    public PlayerControllerC playerController;  // 引用PlayerController脚本
+    private bool canMove = true;
 
     void Start()
     {
@@ -19,24 +16,18 @@ public class Move2 : MonoBehaviour
     {
         float horizontalInput = Input.GetAxis("Horizontal");
 
-        if (gameObject == playerController.controlledBall)
+        if (gameObject == playerController.controlledBall && canMove)
         {
-            // 施加力
+            // 仅当当前小球是被控制的小球且可以移动时应用力
             Vector2 movement = new Vector2(horizontalInput, 0f);
             rb.AddForce(movement * moveSpeed);
         }
+
+        // 检测 "AD" 键是否被松开，如果是，禁止小球再次移动
         if ((Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) && gameObject == playerController.controlledBall)
+
         {
             canMove = false;
         }
-
     }
-
-    // 设置移动速度的公共方法
-    public void SetMoveSpeed(float speed)
-    {
-        moveSpeed = speed+5f;
-        Debug.Log("v3: " + moveSpeed);
-    }
-    
 }

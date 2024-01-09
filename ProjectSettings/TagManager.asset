@@ -12,6 +12,7 @@ TagManager:
   - auto
   - Ball4
   - Final
+  - Money
   layers:
   - Default
   - TransparentFX

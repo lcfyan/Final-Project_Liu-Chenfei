@@ -1,22 +1,18 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameOverCollision : MonoBehaviour
+public class SceneTransfer : MonoBehaviour
 {
-    public UIManager uiManager; // 引用 UIManager 脚本
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // 检测是否碰撞到了带有 "Ball5" 标签的物体
-        if (collision.gameObject.CompareTag("Ball4"))
+        if (collision.gameObject.CompareTag("Ball3"))
         {
+            // 如果碰到了 "Ball3"，调用 LoadNextScene 函数
             LoadNextScene();
         }
-        else if (collision.gameObject.CompareTag("Ball1"))
-        {
-            // 与 "Ball1" 物体碰撞，弹出 UI
-            uiManager.ShowUI();
-        }
     }
+
+    // 跳转到下一个场景的函数
     void LoadNextScene()
     {
         // 获取当前场景的 Build Index
