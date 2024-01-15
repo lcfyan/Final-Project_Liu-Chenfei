@@ -23,11 +23,11 @@ public class PlayerControllerC : MonoBehaviour
             // 添加条件：controlledBall 为 ball1 且场景中存在标签为 "Money" 的物体
             if (GameObject.FindGameObjectWithTag("Money") != null)
             {
-                controlledBall = ball2;
+                controlledBall = ball3;
             }
             else
             {
-                controlledBall = ball3; // 如果没有 "Money" 物体，切换到 ball3
+                controlledBall = ball2; // 如果没有 "Money" 物体，切换到 ball3
             }
         }
 

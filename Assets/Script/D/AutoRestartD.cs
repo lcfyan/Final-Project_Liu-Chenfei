@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class AutoRestart : MonoBehaviour
+public class AutoRestartD : MonoBehaviour
 {
     void OnCollisionEnter2D(Collision2D collision)
     {
