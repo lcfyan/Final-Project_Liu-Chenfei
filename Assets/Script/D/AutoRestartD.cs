@@ -8,12 +8,12 @@ public class AutoRestartD : MonoBehaviour
         if (collision.gameObject.CompareTag("Ball2"))
         {
             // 如果碰到了 "Ball2"，1秒后调用 RestartScene 函数
-            Invoke("RestartScene", 1.5f);
+            Invoke("RestartScene", 0.5f);
         }
         else if (collision.gameObject.CompareTag("Ball3"))
         {
             // 如果碰到了 "Ball2"，1秒后调用 RestartScene 函数
-            Invoke("RestartScene", 1.5f);
+            Invoke("RestartScene", 0.5f);
         }
     }
 
